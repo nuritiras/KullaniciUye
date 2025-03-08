@@ -1,24 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
+using KullaniciUye.Data;
 using KullaniciUye.Models;
-using System.Collections.Generic;
 using System.Linq;
 
-namespace MVC.KullaniciUye.Controllers
+namespace KullaniciUye.Controllers
 {
     public class KullaniciController : Controller
     {
-        private static List<Kullanici> kullanicilar = new List<Kullanici>();
+        private readonly ApplicationDbContext _context;
+        
+        public KullaniciController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: Kullanici
         public IActionResult Index()
         {
+            var kullanicilar = _context.Kullanicilar.ToList();
             return View(kullanicilar);
         }
 
         // GET: Kullanici/Details/5
         public IActionResult Details(int id)
         {
-            var kullanici = kullanicilar.FirstOrDefault(k => k.Id == id);
+            var kullanici = _context.Kullanicilar.FirstOrDefault(k => k.Id == id);
             if (kullanici == null)
             {
                 return NotFound();
@@ -39,7 +45,8 @@ namespace MVC.KullaniciUye.Controllers
         {
             if (ModelState.IsValid)
             {
-                kullanicilar.Add(kullanici);
+                _context.Kullanicilar.Add(kullanici);
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             return View(kullanici);
@@ -48,7 +55,7 @@ namespace MVC.KullaniciUye.Controllers
         // GET: Kullanici/Edit/5
         public IActionResult Edit(int id)
         {
-            var kullanici = kullanicilar.FirstOrDefault(k => k.Id == id);
+            var kullanici = _context.Kullanicilar.FirstOrDefault(k => k.Id == id);
             if (kullanici == null)
             {
                 return NotFound();
@@ -68,12 +75,13 @@ namespace MVC.KullaniciUye.Controllers
 
             if (ModelState.IsValid)
             {
-                var existingKullanici = kullanicilar.FirstOrDefault(k => k.Id == id);
+                var existingKullanici = _context.Kullanicilar.FirstOrDefault(k => k.Id == id);
                 if (existingKullanici != null)
                 {
                     existingKullanici.Ad = kullanici.Ad;
                     existingKullanici.Email = kullanici.Email;
-                    // Update other fields as necessary
+                    // Diğer alanları güncelle
+                    _context.SaveChanges();
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -83,7 +91,7 @@ namespace MVC.KullaniciUye.Controllers
         // GET: Kullanici/Delete/5
         public IActionResult Delete(int id)
         {
-            var kullanici = kullanicilar.FirstOrDefault(k => k.Id == id);
+            var kullanici = _context.Kullanicilar.FirstOrDefault(k => k.Id == id);
             if (kullanici == null)
             {
                 return NotFound();
@@ -96,10 +104,11 @@ namespace MVC.KullaniciUye.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            var kullanici = kullanicilar.FirstOrDefault(k => k.Id == id);
+            var kullanici = _context.Kullanicilar.FirstOrDefault(k => k.Id == id);
             if (kullanici != null)
             {
-                kullanicilar.Remove(kullanici);
+                _context.Kullanicilar.Remove(kullanici);
+                _context.SaveChanges();
             }
             return RedirectToAction(nameof(Index));
         }

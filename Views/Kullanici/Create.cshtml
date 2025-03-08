@@ -5,10 +5,12 @@
 }
 
 <h2>Kullanici Ekle</h2>
+
+<h4>Kullanıcı</h4>
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Create">
+        <form asp-action="Create" method="post">
             <div class="form-group my-2">
                 <label asp-for="Ad" class="control-label"></label>
                 <input asp-for="Ad" class="form-control" />
@@ -43,7 +45,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Listeye Geri Dön</a>
+    <a asp-action="Index">Geri Dön</a>
 </div>
 
 @section Scripts {

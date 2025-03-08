@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/nuri/MVC/KullaniciUye/KullaniciUye.csproj": {}
+    "/Users/nuritiras/Documents/MVC/KullaniciUye/KullaniciUye.csproj": {}
   },
   "projects": {
-    "/home/nuri/MVC/KullaniciUye/KullaniciUye.csproj": {
+    "/Users/nuritiras/Documents/MVC/KullaniciUye/KullaniciUye.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/nuri/MVC/KullaniciUye/KullaniciUye.csproj",
+        "projectUniqueName": "/Users/nuritiras/Documents/MVC/KullaniciUye/KullaniciUye.csproj",
         "projectName": "KullaniciUye",
-        "projectPath": "/home/nuri/MVC/KullaniciUye/KullaniciUye.csproj",
-        "packagesPath": "/home/nuri/.nuget/packages/",
-        "outputPath": "/home/nuri/MVC/KullaniciUye/obj/",
+        "projectPath": "/Users/nuritiras/Documents/MVC/KullaniciUye/KullaniciUye.csproj",
+        "packagesPath": "/Users/nuritiras/.nuget/packages/",
+        "outputPath": "/Users/nuritiras/Documents/MVC/KullaniciUye/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/nuri/.nuget/NuGet/NuGet.Config"
+          "/Users/nuritiras/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,11 +38,33 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

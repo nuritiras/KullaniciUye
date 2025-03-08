@@ -1,0 +1,42 @@
+@model KullaniciUye.Models.Kullanici
+
+@{
+    ViewData["Title"] = "Kullanıcı Detayları";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Kullanıcı</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Soyad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Soyad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sifre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Düzenle</a> |
+    <a asp-action="Index">Geri Dön</a>
+</div>
