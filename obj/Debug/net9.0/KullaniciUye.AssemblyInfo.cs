@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KullaniciUye")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf2241b5dc84978a2c9e8564cd943a0fa82240b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5c30cb543c6b72852be728de6c523b76256592b")]
 [assembly: System.Reflection.AssemblyProductAttribute("KullaniciUye")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KullaniciUye")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
