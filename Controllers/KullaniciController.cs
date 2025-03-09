@@ -79,8 +79,10 @@ namespace KullaniciUye.Controllers
                 if (existingKullanici != null)
                 {
                     existingKullanici.Ad = kullanici.Ad;
+                    existingKullanici.Soyad = kullanici.Soyad;
                     existingKullanici.Email = kullanici.Email;
-                    // Diğer alanları güncelle
+                    existingKullanici.Sifre = kullanici.Sifre;
+                    _context.Kullanicilar.Update(existingKullanici);
                     _context.SaveChanges();
                 }
                 return RedirectToAction(nameof(Index));
