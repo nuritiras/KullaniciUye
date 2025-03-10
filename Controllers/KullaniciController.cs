@@ -82,6 +82,7 @@ namespace KullaniciUye.Controllers
                     existingKullanici.Soyad = kullanici.Soyad;
                     existingKullanici.Email = kullanici.Email;
                     existingKullanici.Sifre = kullanici.Sifre;
+                    existingKullanici.SifreTekrar = kullanici.SifreTekrar;
                     _context.Kullanicilar.Update(existingKullanici);
                     _context.SaveChanges();
                 }
