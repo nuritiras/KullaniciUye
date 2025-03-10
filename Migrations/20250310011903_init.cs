@@ -21,6 +21,7 @@ namespace KullaniciUye.Migrations
                     Soyad = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
                     Email = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     Sifre = table.Column<string>(type: "TEXT", maxLength: 15, nullable: false),
+                    SifreTekrar = table.Column<string>(type: "TEXT", maxLength: 15, nullable: false),
                     KayitTarihi = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>

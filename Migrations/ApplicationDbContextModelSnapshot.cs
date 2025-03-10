@@ -41,6 +41,11 @@ namespace KullaniciUye.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("SifreTekrar")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Soyad")
                         .IsRequired()
                         .HasMaxLength(30)

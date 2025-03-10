@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KullaniciUye.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250308195931_init")]
+    [Migration("20250310011903_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -40,6 +40,11 @@ namespace KullaniciUye.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Sifre")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SifreTekrar")
                         .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("TEXT");
